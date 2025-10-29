@@ -120,7 +120,7 @@ class Location
     public function removeUser(User $user): static
     {
         if ($this->users->removeElement($user)) {
-            // set the owning side to null (unless already changed)
+
             if ($user->getLocation() === $this) {
                 $user->setLocation(null);
             }
@@ -150,7 +150,7 @@ class Location
     public function removeMeasurement(Measurement $measurement): static
     {
         if ($this->measurements->removeElement($measurement)) {
-            // set the owning side to null (unless already changed)
+
             if ($measurement->getLocation() === $this) {
                 $measurement->setLocation(null);
             }

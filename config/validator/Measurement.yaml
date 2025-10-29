@@ -1,0 +1,35 @@
+App\Entity\Measurement:
+    properties:
+        humidity:
+            - NotBlank:
+                  message: "Humidity cannot be empty"
+            - Range:
+                  min: 0
+                  max: 100
+                  notInRangeMessage: "Humidity must be between 0% and 100%"
+
+        windSpeed:
+            - NotBlank:
+                  message: "Wind speed cannot be empty"
+            - Range:
+                  min: 0
+                  max: 400
+                  notInRangeMessage: "Wind speed must be between 0 and 400 km/h"
+
+        date:
+            - NotNull:
+                  message: "Date cannot be empty"
+            - Type:
+                  type: DateTime
+                  message: "Date must be a valid date"
+
+        celsius:
+            - NotBlank:
+                  message: "Temperature cannot be empty"
+            - Range:
+                  min: -100
+                  max: 100
+                  notInRangeMessage: "Temperature must be between -100°C and 100°C"
+
+        location:
+            - NotNull:
