@@ -31,18 +31,18 @@ class Location
     /**
      * @var Collection<int, User>
      */
-    #[ORM\OneToMany(targetEntity: User::class, mappedBy: 'location')]
-    private Collection $users;
+  //  #[ORM\ManyToMany(targetEntity: User::class, mappedBy: 'location')]
+   // private Collection $users;
 
     /**
-     * @var Collection<int, Measurement>
+   //  * @var Collection<int, Measurement>
      */
     #[ORM\OneToMany(targetEntity: Measurement::class, mappedBy: 'location')]
     private Collection $measurements;
 
     public function __construct()
     {
-        $this->users = new ArrayCollection();
+      //  $this->users = new ArrayCollection();
         $this->measurements = new ArrayCollection();
     }
 
@@ -99,35 +99,35 @@ class Location
         return $this;
     }
 
-    /**
-     * @return Collection<int, User>
-     */
-    public function getUsers(): Collection
-    {
-        return $this->users;
-    }
+   // /**
+   //  * @return Collection<int, User>
+   //  */
+   // public function getUsers(): Collection
+   // {
+   //     return $this->users;
+   // }
 
-    public function addUser(User $user): static
-    {
-        if (!$this->users->contains($user)) {
-            $this->users->add($user);
-            $user->setLocation($this);
-        }
+   // public function addUser(User $user): static
+   // {
+     //   if (!$this->users->contains($user)) {
+     //       $this->users->add($user);
+      //      $user->setLocation($this);
+      //  }
 
-        return $this;
-    }
+    //    return $this;
+   // }
 
-    public function removeUser(User $user): static
-    {
-        if ($this->users->removeElement($user)) {
+   // public function removeUser(User $user): static
+   // {
+      //  if ($this->users->removeElement($user)) {
 
-            if ($user->getLocation() === $this) {
-                $user->setLocation(null);
-            }
-        }
+         //   if ($user->getLocation() === $this) {
+         //       $user->setLocation(null);
+         //   }
+      //  }
 
-        return $this;
-    }
+       // return $this;
+   // }
 
     /**
      * @return Collection<int, Measurement>

@@ -3,19 +3,23 @@ App\Entity\Location:
         city:
             - NotBlank:
                   message: "City cannot be empty"
+                  groups: ['create', 'edit']
 
         country:
             - NotBlank:
                   message: "Country cannot be empty"
+                  groups: ['create', 'edit']
 
         latitude:
             - Range:
                   min: -90
                   max: 90
                   notInRangeMessage: "This value should be between -90 and 90"
+                  groups: ['create', 'edit']
 
         longitude:
             - Range:
                   min: -180
                   max: 180
                   notInRangeMessage: "This value should be between -180 and 180"
+                  groups: ['create', 'edit']

@@ -3,33 +3,42 @@ App\Entity\Measurement:
         humidity:
             - NotBlank:
                   message: "Humidity cannot be empty"
+                  groups: ['create', 'edit']
             - Range:
                   min: 0
                   max: 100
                   notInRangeMessage: "Humidity must be between 0% and 100%"
+                  groups: ['create', 'edit']
 
         windSpeed:
             - NotBlank:
                   message: "Wind speed cannot be empty"
+                  groups: ['create', 'edit']
             - Range:
                   min: 0
                   max: 400
                   notInRangeMessage: "Wind speed must be between 0 and 400 km/h"
+                  groups: ['create', 'edit']
 
         date:
             - NotNull:
                   message: "Date cannot be empty"
+                  groups: ['create', 'edit']
             - Type:
                   type: DateTime
                   message: "Date must be a valid date"
+                  groups: ['create', 'edit']
 
         celsius:
             - NotBlank:
                   message: "Temperature cannot be empty"
+                  groups: ['create', 'edit']
             - Range:
                   min: -100
                   max: 100
                   notInRangeMessage: "Temperature must be between -100°C and 100°C"
+                  groups: ['create', 'edit']
 
         location:
             - NotNull:
+                  groups: ['create', 'edit']
