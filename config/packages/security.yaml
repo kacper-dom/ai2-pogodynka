@@ -21,6 +21,9 @@ security:
                 login_path: app_login
                 check_path: app_login
 
+            login_throttling:
+                max_attempts: 2
+
             logout:
                 path: app_logout
 
